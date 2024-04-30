@@ -1,0 +1,29 @@
+{% extends 'parks/base.html'%} {% load static %} {% block content %}
+<div class="container">
+  <br /><br />
+  <div class="row">
+    <div class="col-md-5">
+      <br />
+      <img
+        class="img-fluid"
+        src="{{ park.image.url }}"
+        title="{{ park.image.title }}"
+        alt="{{ park.image.title }}"
+        style="width: 90%"
+      />
+      <br /><br />
+      <h3 class="card-title text-center">{{ park.name }}</h3>
+    </div>
+    <div class="col-md-7 shadow-lg p-3 mb-5 bg-white rounded">
+      <h1 class="my-3">Описание парка</h1>
+      <p class="lead">{{ park.description|safe }}</p>
+      <h1 class="my-3">Детали парка</h1>
+      <ul>
+        <li>Категория: {{ park.category }}</li>
+        <li>Местоположение: {{ park.location }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

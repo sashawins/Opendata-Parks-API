@@ -1,0 +1,46 @@
+{% extends 'parks/base.html'%} {% load static %} {% block content %}
+<div class="container">
+  <div class="text-center container">
+    <br />
+    <h2 class="text-center">Введите название парка</h2>
+    <br />
+    <form method="GET">
+      <input
+        type="text"
+        name="name"
+        placeholder="Поиск..."
+        class="text-center"
+      />
+      <button type="submit" class="btn-danger btn-sm">ПОИСК</button>
+    </form>
+  </div>
+  <br /><br />
+  <div class="row">
+    {% for park in all_parks %}
+    <div class="col-md-4 col-sm-6 col-lg-3">
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{{ park.image.url }}"
+          title="{{ park.image.title }}"
+          alt="{{ park.image.title }}"
+        />
+        <div class="card-body text-center">
+          <p class="card-title">{{ park.name }}</p>
+          <hr />
+          <p class="card-text">{{ park.location }}</p>
+          <a href="/parks/{{park.id}}"
+            ><input
+              type="submit"
+              value="Learn More"
+              class="btn btn-danger btn-sm"
+              type="button"
+          /></a>
+        </div>
+      </div>
+      <br /><br /><br />
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
