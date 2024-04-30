@@ -9,9 +9,9 @@ psycopg, django, djangorestframework:
 
 
 # Preview
-Main page:
+### Main page:
 ![API Searching page preview](https://i.imgur.com/CMLHVZM.png)
-Park details page:
+### Park details page:
 ![API Park details preview](https://i.imgur.com/Y3S4Go3.png)
 
 # Usage
